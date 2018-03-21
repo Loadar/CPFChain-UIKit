@@ -76,6 +76,13 @@ public extension Cpf where Base: UIButton {
     }
     
     @discardableResult
+    public func imageContent(mode: UIViewContentMode) -> Cpf {
+        base.imageView?.contentMode = mode
+        return self
+    }
+    
+    
+    @discardableResult
     public func background(image: UIImage?, state: UIControlState = .normal) -> Cpf {
         base.setBackgroundImage(image, for: state)
         return self
