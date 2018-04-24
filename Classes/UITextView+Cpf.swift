@@ -17,7 +17,7 @@ public extension Cpf where Base: UITextView {
     }
     
     @discardableResult
-    public func text(_ text: String) -> Cpf {
+    public func text(_ text: String?) -> Cpf {
         base.text = text
         return self
     }
@@ -35,7 +35,7 @@ public extension Cpf where Base: UITextView {
     }
     
     @discardableResult
-    public func textAlignment(_ alignment: NSTextAlignment) -> Cpf {
+    public func text(alignment: NSTextAlignment) -> Cpf {
         base.textAlignment = alignment
         return self
     }
