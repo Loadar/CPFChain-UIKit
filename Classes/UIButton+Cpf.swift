@@ -95,15 +95,8 @@ public extension Cpf where Base: UIButton {
     }
     
     @discardableResult
-    public func attributed(title: String?, attributes: [RichTextAttribute], state: UIControlState = .normal) -> Cpf {
-        let richText = RichText([RichTextItem(text: title, attributes: attributes)])
-        return attributed(title: richText, state: state)
-    }
-    
-    @discardableResult
-    public func attributed(title: (String?, [RichTextAttribute])..., state: UIControlState = .normal) -> Cpf {
-        let richText = RichText(title.map { RichTextItem(text: $0.0, attributes: $0.1) })
-        return attributed(title: richText, state: state)
+    public func attributed(title: Cpf<RichText>, state:  UIControlState = .normal) -> Cpf {
+        return self.attributed(title: title.base, state: state)
     }
     
     @discardableResult

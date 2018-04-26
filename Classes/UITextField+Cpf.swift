@@ -23,15 +23,8 @@ public extension Cpf where Base: UITextField {
     }
     
     @discardableResult
-    public func attributed(text: String?, attributes: [RichTextAttribute]) -> Cpf {
-        let richText = RichText([RichTextItem(text: text, attributes: attributes)])
-        return attributed(text: richText)
-    }
-    
-    @discardableResult
-    public func attributed(text: (String?, [RichTextAttribute])...) -> Cpf {
-        let richText = RichText(text.map { RichTextItem(text: $0.0, attributes: $0.1) })
-        return attributed(text: richText)
+    public func attributed(text: Cpf<RichText>) -> Cpf {
+        return self.attributed(text: text.base)
     }
     
     @discardableResult
@@ -59,12 +52,10 @@ public extension Cpf where Base: UITextField {
     }
     
     @discardableResult
-    public func defaultTextAttributes(_ attributes: [RichTextAttribute]) -> Cpf {
-        let item = RichTextItem(text: nil, attributes: attributes)
+    public func defaultTextAttributes(_ attributes: [RichText.Attribute]) -> Cpf {
         var info: [String: Any] = [:]
-        item.attributeInfo.forEach { (key, value) in
-            info[key.rawValue] = value
-        }
+        let list = RichText().attributeInfo(of: attributes)
+        list.forEach { info[$0.key.rawValue] = $0.value }
         base.defaultTextAttributes = info
         return self
     }
@@ -82,15 +73,8 @@ public extension Cpf where Base: UITextField {
     }
     
     @discardableResult
-    public func attributed(placeholder: String?, attributes: [RichTextAttribute]) -> Cpf {
-        let richText = RichText([RichTextItem(text: placeholder, attributes: attributes)])
-        return attributed(placeholder: richText)
-    }
-    
-    @discardableResult
-    public func attributed(placeholder: (String?, [RichTextAttribute])...) -> Cpf {
-        let richText = RichText(placeholder.map { RichTextItem(text: $0.0, attributes: $0.1) })
-        return attributed(placeholder: richText)
+    public func attributed(placeholder: Cpf<RichText>) -> Cpf {
+        return self.attributed(placeholder: placeholder.base)
     }
     
     @discardableResult

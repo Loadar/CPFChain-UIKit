@@ -9,35 +9,100 @@
 import Foundation
 import UIKit
 
-public struct RichText {
-    var items: [RichTextItem]
+public class RichText {
+    var textList: [String]
+    var attributesList: [[RichText.Attribute]]
     
-    public init(_ items: [RichTextItem]) {
-        self.items = items
+    public init(text: String?, attributes: [RichText.Attribute]) {
+        self.textList = [text ?? ""]
+        self.attributesList = [attributes]
+    }
+    
+    public init() {
+        self.textList = []
+        self.attributesList = []
+    }
+    
+    public func add(richText: RichText) {
+        textList.append(contentsOf: richText.textList)
+        attributesList.append(contentsOf: richText.attributesList)
+    }
+    
+    /// 给指定index的text添加属性，未指定index时添加到最后一个text上
+    public func add(attribute: RichText.Attribute, at index: Int? = nil) {
+        let count = attributesList.count
+        if count == 0 { return }
+        guard let theIndex = index else {
+            // 未指定index
+            attributesList[attributesList.count - 1].append(attribute)
+            return
+        }
+        guard (0..<count).contains(theIndex) else {
+            // index越界
+            return
+        }
+        attributesList[theIndex].append(attribute)
     }
     
     /// 结果Attributed String
     public var attributedText: NSAttributedString {
-        let text = NSMutableAttributedString()
-        items.forEach { (aItem) in
-            guard let theText = aItem.attributedText else { return }
-            text.append(theText)
+        let resultText = NSMutableAttributedString()
+        
+        for i in 0..<textList.count {
+            let aText = textList[i]
+            let anAttributes = attributesList[i]
+
+            // 忽略空字符串
+            guard aText.count > 0 else { continue }
+            resultText.append(NSAttributedString(string: aText, attributes: self.attributeInfo(of: anAttributes)))
         }
-        return text
+        return resultText
     }
 }
 
-public struct RichTextItem {
-    var text: String?
-    var attributes: [RichTextAttribute]
-    
-    public init(text: String?, attributes: [RichTextAttribute]) {
-        self.text = text
-        self.attributes = attributes
+extension RichText {
+    public enum Attribute {
+        // 字体
+        case font(UIFont)
+        // 段落
+        case paragraph(NSParagraphStyle)
+        // 文字颜色
+        case color(UIColor)
+        // 背景色
+        case background(UIColor)
+        // 连写
+        case ligature(Bool)
+        // 字间距
+        case kern(CGFloat)
+        // 中划线
+        case throughline(NSUnderlineStyle, UIColor?)
+        // 下划线
+        case underline(NSUnderlineStyle, UIColor?)
+        // 描边
+        case stroke(UIColor?, CGFloat?)
+        // 阴影
+        case shadow(NSShadow)
+        // 文字效果
+        case effect(NSAttributedString.TextEffectStyle)
+        // 附件
+        case attachment(NSTextAttachment)
+        // 链接
+        case link(URL)
+        // 基准线偏移
+        case baselineOffset(CGFloat)
+        // 倾斜
+        case obliqueness(CGFloat)
+        // 水平扩展
+        case expansion(CGFloat)
+        // 书写方向
+        @available(iOS 9, *)
+        case writingDirection(NSWritingDirection, NSWritingDirectionFormatType)
+        @available (iOS, introduced: 7.0, obsoleted: 9.0)
+        case writingDirectionOld(NSWritingDirection, NSTextWritingDirection)
     }
     
     /// 文字属性
-    public var attributeInfo: [NSAttributedStringKey: Any] {
+    public func attributeInfo(of attributes: [RichText.Attribute]) -> [NSAttributedStringKey: Any] {
         var info = [NSAttributedStringKey: Any]()
         // 设置对应属性
         for anAttribute in attributes {
@@ -93,54 +158,6 @@ public struct RichTextItem {
                 info[.writingDirection] = [NSNumber(value: value)]
             }
         }
-        
         return info
     }
-    
-    /// Attributed String
-    public var attributedText: NSAttributedString? {
-        guard let theText = text else { return nil }
-        return NSAttributedString(string: theText, attributes: attributeInfo)
-    }
 }
-
-public enum RichTextAttribute {
-    // 字体
-    case font(UIFont)
-    // 段落
-    case paragraph(NSParagraphStyle)
-    // 文字颜色
-    case color(UIColor)
-    // 背景色
-    case background(UIColor)
-    // 连写
-    case ligature(Bool)
-    // 字间距
-    case kern(CGFloat)
-    // 中划线
-    case throughline(NSUnderlineStyle, UIColor?)
-    // 下划线
-    case underline(NSUnderlineStyle, UIColor?)
-    // 描边
-    case stroke(UIColor?, CGFloat?)
-    // 阴影
-    case shadow(NSShadow)
-    // 文字效果
-    case effect(NSAttributedString.TextEffectStyle)
-    // 附件
-    case attachment(NSTextAttachment)
-    // 链接
-    case link(URL)
-    // 基准线偏移
-    case baselineOffset(CGFloat)
-    // 倾斜
-    case obliqueness(CGFloat)
-    // 水平扩展
-    case expansion(CGFloat)
-    // 书写方向
-    @available(iOS 9, *)
-    case writingDirection(NSWritingDirection, NSWritingDirectionFormatType)
-    @available (iOS, introduced: 7.0, obsoleted: 9.0)
-    case writingDirectionOld(NSWritingDirection, NSTextWritingDirection)
-}
-

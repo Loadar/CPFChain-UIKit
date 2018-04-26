@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93476E492090A28C00AE61DC /* RichText+Cpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93476E482090A28C00AE61DC /* RichText+Cpf.swift */; };
 		938768582057AFBF00D227EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938768572057AFBF00D227EB /* AppDelegate.swift */; };
 		9387685A2057AFBF00D227EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938768592057AFBF00D227EB /* ViewController.swift */; };
 		9387685D2057AFBF00D227EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9387685B2057AFBF00D227EB /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		1FB5DC108D1679066462F5BC /* Pods_CPFChain_UIKitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPFChain_UIKitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93476E482090A28C00AE61DC /* RichText+Cpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RichText+Cpf.swift"; sourceTree = "<group>"; };
 		938768542057AFBF00D227EB /* CPFChain_UIKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPFChain_UIKitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938768572057AFBF00D227EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		938768592057AFBF00D227EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				938768A82057D8B500D227EB /* UICollectionViewFlowLayout+Cpf.swift */,
 				938768902057C59400D227EB /* GestureRecognizer.swift */,
 				938768982057C8CE00D227EB /* RichText.swift */,
+				93476E482090A28C00AE61DC /* RichText+Cpf.swift */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -412,6 +415,7 @@
 				9387688F2057B4BA00D227EB /* UIView+Cpf.swift in Sources */,
 				938768A72057D6CF00D227EB /* UICollectionView+Cpf.swift in Sources */,
 				938768992057C8CE00D227EB /* RichText.swift in Sources */,
+				93476E492090A28C00AE61DC /* RichText+Cpf.swift in Sources */,
 				938768582057AFBF00D227EB /* AppDelegate.swift in Sources */,
 				9387689D2057CF5400D227EB /* UIImageView+Cpf.swift in Sources */,
 				9387689B2057CAB900D227EB /* UITextField+Cpf.swift in Sources */,

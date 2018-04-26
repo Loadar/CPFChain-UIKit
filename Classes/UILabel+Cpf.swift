@@ -22,18 +22,9 @@ public extension Cpf where Base: UILabel {
         return self
     }
     
-    /// 一段文字同样的属性
     @discardableResult
-    public func attributed(text: String?, attributes: [RichTextAttribute]) -> Cpf {
-        let richText = RichText([RichTextItem(text: text, attributes: attributes)])
-        return attributed(text: richText)
-    }
-    
-    /// 一段文字不同range属性不同
-    @discardableResult
-    public func attributed(text: (String?, [RichTextAttribute])...) -> Cpf {
-        let richText = RichText(text.map { RichTextItem(text: $0.0, attributes: $0.1) })
-        return attributed(text: richText)
+    public func attributed(text: Cpf<RichText>) -> Cpf {
+        return self.attributed(text: text.base)
     }
     
     @discardableResult

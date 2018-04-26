@@ -65,17 +65,10 @@ public extension Cpf where Base: UITextView {
     }
     
     @discardableResult
-    public func attributed(text: String?, attributes: [RichTextAttribute]) -> Cpf {
-        let richText = RichText([RichTextItem(text: text, attributes: attributes)])
-        return attributed(text: richText)
+    public func attributed(text: Cpf<RichText>) -> Cpf {
+        return self.attributed(text: text.base)
     }
-    
-    @discardableResult
-    public func attributed(text: (String?, [RichTextAttribute])...) -> Cpf {
-        let richText = RichText(text.map { RichTextItem(text: $0.0, attributes: $0.1) })
-        return attributed(text: richText)
-    }
-    
+
     @discardableResult
     public func textContainer(insets: UIEdgeInsets, padding: CGFloat? = nil) -> Cpf {
         base.textContainerInset = insets
