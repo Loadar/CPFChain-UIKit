@@ -15,6 +15,8 @@ extension String {
     }
 }
 
+extension RichText: CpfCompatible {}
+
 extension Cpf where Base: RichText {
     @discardableResult
     public func add(_ text: Cpf<RichText>) -> Cpf {
