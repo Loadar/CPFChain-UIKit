@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'CPFChain+UIKit'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.summary = 'UIKit链式调用'
   s.license = { :type => 'MIT', :file => 'LICENSE' }
   s.author = { 'chenpengfei' => 'afeiafeia@163.com' }
