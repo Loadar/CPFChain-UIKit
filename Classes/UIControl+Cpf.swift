@@ -29,19 +29,19 @@ public extension Cpf where Base: UIControl {
     }
     
     @discardableResult
-    public func contentAlignment(vertical: UIControlContentVerticalAlignment?, horizontal: UIControlContentHorizontalAlignment?) -> Cpf {
+    public func contentAlignment(vertical: UIControl.ContentVerticalAlignment?, horizontal: UIControl.ContentHorizontalAlignment?) -> Cpf {
         if let alignment = vertical {
             base.contentVerticalAlignment = alignment
         }
         if let alignment = horizontal {
-            base .contentHorizontalAlignment = alignment
+            base.contentHorizontalAlignment = alignment
         }
         return self
     }
     
     /// 默认event是touchUpInside
     @discardableResult
-    public func action(_ action: Selector, to target: Any?, event: UIControlEvents = .touchUpInside) -> Cpf {
+    public func action(_ action: Selector, to target: Any?, event: UIControl.Event = .touchUpInside) -> Cpf {
         base.addTarget(target, action: action, for: event)
         return self
     }

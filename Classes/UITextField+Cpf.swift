@@ -46,7 +46,7 @@ public extension Cpf where Base: UITextField {
     }
     
     @discardableResult
-    public func borderStyle(_ style: UITextBorderStyle) -> Cpf {
+    public func borderStyle(_ style: UITextField.BorderStyle) -> Cpf {
         base.borderStyle = style
         return self
     }
@@ -56,7 +56,7 @@ public extension Cpf where Base: UITextField {
         var info: [String: Any] = [:]
         let list = RichText().attributeInfo(of: attributes)
         list.forEach { info[$0.key.rawValue] = $0.value }
-        base.defaultTextAttributes = info
+        base.defaultTextAttributes = convertToNSAttributedStringKeyDictionary(info)
         return self
     }
     
@@ -105,7 +105,7 @@ public extension Cpf where Base: UITextField {
     }
     
     @discardableResult
-    public func background(image: UIImage?, state: UIControlState? = nil) -> Cpf {
+    public func background(image: UIImage?, state: UIControl.State? = nil) -> Cpf {
         if state == .disabled {
             base.disabledBackground = image
         } else {
@@ -115,13 +115,13 @@ public extension Cpf where Base: UITextField {
     }
     
     @discardableResult
-    public func clearButton(mode: UITextFieldViewMode) -> Cpf {
+    public func clearButton(mode: UITextField.ViewMode) -> Cpf {
         base.clearButtonMode = mode
         return self
     }
     
     @discardableResult
-    public func left(view: UIView?, mode: UITextFieldViewMode? = nil) -> Cpf {
+    public func left(view: UIView?, mode: UITextField.ViewMode? = nil) -> Cpf {
         base.leftView = view
         if let viewMode = mode {
             base.leftViewMode = viewMode
@@ -130,7 +130,7 @@ public extension Cpf where Base: UITextField {
     }
     
     @discardableResult
-    public func right(view: UIView?, mode: UITextFieldViewMode? = nil) -> Cpf {
+    public func right(view: UIView?, mode: UITextField.ViewMode? = nil) -> Cpf {
         base.rightView = view
         if let viewMode = mode {
             base.rightViewMode = viewMode
@@ -220,3 +220,8 @@ public extension Cpf where Base: UITextField {
     }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSAttributedStringKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.Key: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}

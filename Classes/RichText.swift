@@ -102,8 +102,8 @@ extension RichText {
     }
     
     /// 文字属性
-    public func attributeInfo(of attributes: [RichText.Attribute]) -> [NSAttributedStringKey: Any] {
-        var info = [NSAttributedStringKey: Any]()
+    public func attributeInfo(of attributes: [RichText.Attribute]) -> [NSAttributedString.Key: Any] {
+        var info = [NSAttributedString.Key: Any]()
         // 设置对应属性
         for anAttribute in attributes {
             switch anAttribute {

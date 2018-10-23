@@ -5,7 +5,7 @@ UIKit链式调用
 
 ```Swift
 // 支持Pods
-pod 'CPFChain+UIKit', '~>0.0.1'
+pod 'CPFChain+UIKit', '~>1.0.0'
 ```
 
 ```Swift

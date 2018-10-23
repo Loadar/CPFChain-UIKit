@@ -35,7 +35,7 @@ public extension Cpf where Base: UICollectionViewFlowLayout {
     }
     
     @discardableResult
-    public func scroll(direction: UICollectionViewScrollDirection) -> Cpf {
+    public func scroll(direction: UICollectionView.ScrollDirection) -> Cpf {
         base.scrollDirection = direction
         return self
     }

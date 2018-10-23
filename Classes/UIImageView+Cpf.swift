@@ -11,7 +11,7 @@ import CPFChain
 
 extension Cpf where Base: UIImageView {
     @discardableResult
-    public func image(_ image: UIImage?, state: UIControlState? = nil) -> Cpf {
+    public func image(_ image: UIImage?, state: UIControl.State? = nil) -> Cpf {
         if state == .highlighted {
             base.highlightedImage = image
         } else {

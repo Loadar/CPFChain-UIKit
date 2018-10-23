@@ -35,7 +35,7 @@ public extension Cpf where Base: UIScrollView {
     
     @available(iOS 11.0, *)
     @discardableResult
-    public func contentInsetAdjust(behavior: UIScrollViewContentInsetAdjustmentBehavior) -> Cpf {
+    public func contentInsetAdjust(behavior: UIScrollView.ContentInsetAdjustmentBehavior) -> Cpf {
         base.contentInsetAdjustmentBehavior = behavior
         return self
     }
@@ -101,7 +101,7 @@ public extension Cpf where Base: UIScrollView {
     }
     
     @discardableResult
-    public func indicator(insets: UIEdgeInsets?, style: UIScrollViewIndicatorStyle? = nil) -> Cpf {
+    public func indicator(insets: UIEdgeInsets?, style: UIScrollView.IndicatorStyle? = nil) -> Cpf {
         if let theInsets = insets {
             base.scrollIndicatorInsets = theInsets
         }
@@ -113,12 +113,12 @@ public extension Cpf where Base: UIScrollView {
     
     @discardableResult
     public func deceleration(rate: CGFloat) -> Cpf {
-        base.decelerationRate = rate
+        base.decelerationRate = UIScrollView.DecelerationRate(rawValue: rate)
         return self
     }
     
     @discardableResult
-    public func indexDisplay(mode: UIScrollViewIndexDisplayMode) -> Cpf {
+    public func indexDisplay(mode: UIScrollView.IndexDisplayMode) -> Cpf {
         base.indexDisplayMode = mode
         return self
     }
@@ -169,7 +169,7 @@ public extension Cpf where Base: UIScrollView {
     }
     
     @discardableResult
-    public func keyboardDismiss(mode: UIScrollViewKeyboardDismissMode) -> Cpf {
+    public func keyboardDismiss(mode: UIScrollView.KeyboardDismissMode) -> Cpf {
         base.keyboardDismissMode = mode
         return self
     }

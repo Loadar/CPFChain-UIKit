@@ -61,7 +61,7 @@ public struct GestureRecognizer {
     ///   - touches: 需要多少触控点(多少手指)触发手势, 未设置时使用默认值
     ///   - direction: 触发方向，未设置时使用默认值
     /// - Returns: 结果Recognizer
-    public static func swipe(to target: Any?, action: Selector?, touches: Int? = 1, direction: UISwipeGestureRecognizerDirection = .right) -> GestureRecognizer {
+    public static func swipe(to target: Any?, action: Selector?, touches: Int? = 1, direction: UISwipeGestureRecognizer.Direction = .right) -> GestureRecognizer {
         let recognizer = UISwipeGestureRecognizer(target: target, action: action)
         if let count = touches {
             recognizer.numberOfTouchesRequired = count

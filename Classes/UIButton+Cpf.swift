@@ -52,50 +52,50 @@ public extension Cpf where Base: UIButton {
     }
     
     @discardableResult
-    public func title(_ title: String?, state: UIControlState = .normal) -> Cpf {
+    public func title(_ title: String?, state: UIControl.State = .normal) -> Cpf {
         base.setTitle(title, for: state)
         return self
     }
     
     @discardableResult
-    public func titleColor(_ color: UIColor?, state: UIControlState = .normal) -> Cpf {
+    public func titleColor(_ color: UIColor?, state: UIControl.State = .normal) -> Cpf {
         base.setTitleColor(color, for: state)
         return self
     }
     
     @discardableResult
-    public func titleShadowColor(_ color: UIColor?, state: UIControlState = .normal) -> Cpf {
+    public func titleShadowColor(_ color: UIColor?, state: UIControl.State = .normal) -> Cpf {
         base.setTitleShadowColor(color, for: state)
         return self
     }
     
     @discardableResult
-    public func image(_ image: UIImage?, state: UIControlState = .normal) -> Cpf {
+    public func image(_ image: UIImage?, state: UIControl.State = .normal) -> Cpf {
         base.setImage(image, for: state)
         return self
     }
     
     @discardableResult
-    public func imageContent(mode: UIViewContentMode) -> Cpf {
+    public func imageContent(mode: UIView.ContentMode) -> Cpf {
         base.imageView?.contentMode = mode
         return self
     }
     
     
     @discardableResult
-    public func background(image: UIImage?, state: UIControlState = .normal) -> Cpf {
+    public func background(image: UIImage?, state: UIControl.State = .normal) -> Cpf {
         base.setBackgroundImage(image, for: state)
         return self
     }
     
     @discardableResult
-    public func attributed(title: RichText?, state: UIControlState = .normal) -> Cpf {
+    public func attributed(title: RichText?, state: UIControl.State = .normal) -> Cpf {
         base.setAttributedTitle(title?.attributedText, for: state)
         return self
     }
     
     @discardableResult
-    public func attributed(title: Cpf<RichText>, state:  UIControlState = .normal) -> Cpf {
+    public func attributed(title: Cpf<RichText>, state:  UIControl.State = .normal) -> Cpf {
         return self.attributed(title: title.base, state: state)
     }
     

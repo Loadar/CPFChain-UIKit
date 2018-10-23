@@ -79,7 +79,7 @@ public extension Cpf where Base: UIView {
     }
     
     @discardableResult
-    public func autoResizing(mask: UIViewAutoresizing) -> Cpf {
+    public func autoResizing(mask: UIView.AutoresizingMask) -> Cpf {
         base.autoresizingMask = mask
         return self
     }
@@ -115,7 +115,7 @@ public extension Cpf where Base: UIView {
     }
     
     @discardableResult
-    public func content(mode: UIViewContentMode) -> Cpf {
+    public func content(mode: UIView.ContentMode) -> Cpf {
         base.contentMode = mode
         return self
     }
@@ -127,8 +127,10 @@ public extension Cpf where Base: UIView {
     }
     
     @discardableResult
-    public func tint(color: UIColor, ajust mode: UIViewTintAdjustmentMode? = nil) -> Cpf {
-        base.tintColor = color
+    public func tint(color: UIColor?, ajust mode: UIView.TintAdjustmentMode? = nil) -> Cpf {
+        if let tintColor = color {
+            base.tintColor = tintColor
+        }
         if let adjustMode = mode {
             base.tintAdjustmentMode = adjustMode
         }

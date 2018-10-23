@@ -45,25 +45,25 @@ public extension Cpf where Base: UICollectionView {
     
     @discardableResult
     public func register(header headerClass: UICollectionReusableView.Type?, with identifier: String) -> Cpf {
-        base.register(headerClass, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: identifier)
+        base.register(headerClass, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: identifier)
         return self
     }
     
     @discardableResult
     public func register(header nib: UINib?, with identifier: String) -> Cpf {
-        base.register(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: identifier)
+        base.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: identifier)
         return self
     }
 
     @discardableResult
     public func register(footer footerClass: UICollectionReusableView.Type?, with identifier: String) -> Cpf {
-        base.register(footerClass, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: identifier)
+        base.register(footerClass, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: identifier)
         return self
     }
     
     @discardableResult
     public func register(footer nib: UINib?, with identifier: String) -> Cpf {
-        base.register(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: identifier)
+        base.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: identifier)
         return self
     }
 

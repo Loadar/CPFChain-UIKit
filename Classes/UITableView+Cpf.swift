@@ -48,7 +48,7 @@ public extension Cpf where Base: UITableView {
     }
     
     @discardableResult
-    public func separator(style: UITableViewCellSeparatorStyle? = nil, insets: UIEdgeInsets? = nil, color: UIColor? = nil, effect: UIVisualEffect? = nil) -> Cpf {
+    public func separator(style: UITableViewCell.SeparatorStyle? = nil, insets: UIEdgeInsets? = nil, color: UIColor? = nil, effect: UIVisualEffect? = nil) -> Cpf {
         if let separatorStyle = style {
             base.separatorStyle = separatorStyle
         }
