@@ -53,10 +53,7 @@ public extension Cpf where Base: UITextField {
     
     @discardableResult
     public func defaultTextAttributes(_ attributes: [RichText.Attribute]) -> Cpf {
-        var info: [String: Any] = [:]
-        let list = RichText().attributeInfo(of: attributes)
-        list.forEach { info[$0.key.rawValue] = $0.value }
-        base.defaultTextAttributes = convertToNSAttributedStringKeyDictionary(info)
+        base.defaultTextAttributes = RichText().attributeInfo(of: attributes)
         return self
     }
     
@@ -218,10 +215,4 @@ public extension Cpf where Base: UITextField {
         base.textContentType = type
         return self
     }
-}
-
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToNSAttributedStringKeyDictionary(_ input: [String: Any]) -> [NSAttributedString.Key: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
