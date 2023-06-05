@@ -15,7 +15,7 @@ let package = Package(
 
     ],
     dependencies: [
-        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.0")),
+        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.3")),
     ],
     targets: [
         .target(
