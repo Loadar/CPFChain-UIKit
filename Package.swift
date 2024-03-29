@@ -15,11 +15,14 @@ let package = Package(
 
     ],
     dependencies: [
-        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.3")),
+        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.5")),
     ],
     targets: [
         .target(
             name: "CPFChain-UIKit",
-            dependencies: ["CPFChain"]),
+            dependencies: ["CPFChain"],
+            path: "Sources",
+            resources: [.copy("PrivacyInfo.xcprivacy")]
+        ),
     ]
 )
