@@ -9,20 +9,19 @@ let package = Package(
             name: "CPFChain-UIKit",
             targets: ["CPFChain-UIKit"]),
         .library(
-            name: "CPFChain-UIKit-Dynamic",
+            name: "CPFChain-UIKitDynamic",
             type: .dynamic,
             targets: ["CPFChain-UIKit"]),
 
     ],
     dependencies: [
-        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.5")),
+        .package(url: "https://github.com/Loadar/CPFChain.git", from: Version(stringLiteral: "2.2.6")),
     ],
     targets: [
         .target(
             name: "CPFChain-UIKit",
-            dependencies: ["CPFChain"],
-            path: "Sources",
-            resources: [.copy("PrivacyInfo.xcprivacy")]
+            dependencies: [.product(name: "CPFChainDynamic", package: "CPFChain")],
+            path: "Sources"
         ),
     ]
 )
