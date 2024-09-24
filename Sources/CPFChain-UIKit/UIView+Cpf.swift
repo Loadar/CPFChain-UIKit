@@ -209,13 +209,7 @@ public extension Cpf where Wrapped: UIView {
 // MARK: - Layer
 public extension Cpf where Wrapped: UIView {
     @discardableResult
-    func corner(radius: CGFloat) -> Cpf {
-        wrapped.layer.cpf.corner(radius: radius)
-        return self
-    }
-    
-    @discardableResult
-    func corner(radius: CGFloat, mask: CACornerMask) -> Cpf {
+    func corner(radius: CGFloat, mask: CACornerMask? = nil) -> Cpf {
         wrapped.layer.cpf.corner(radius: radius, mask: mask)
         return self
     }

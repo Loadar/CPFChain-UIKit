@@ -15,6 +15,19 @@ public extension Cpf where Wrapped: CALayer {
         wrapped.cornerRadius = radius
         let corners = mask ?? [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         wrapped.maskedCorners = corners
+        
+        if #available(iOS 13.0, *) {
+            wrapped.cornerCurve = .circular
+        } else {
+            // do nothing
+        }
+        return self
+    }
+    
+    @available(iOS 13.0, *)
+    @discardableResult
+    func cornerCurve(_ curve: CALayerCornerCurve) -> Cpf {
+        wrapped.cornerCurve = curve
         return self
     }
 
