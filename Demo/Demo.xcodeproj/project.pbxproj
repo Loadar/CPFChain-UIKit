@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93413A422A29C81000C4E435 /* CPFChain-UIKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 93413A412A29C81000C4E435 /* CPFChain-UIKit-Dynamic */; };
-		93413A432A29C81000C4E435 /* CPFChain-UIKit-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 93413A412A29C81000C4E435 /* CPFChain-UIKit-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		937005042CB66D58009E4936 /* CPFChain-UIKitDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 937005032CB66D58009E4936 /* CPFChain-UIKitDynamic */; };
+		937005052CB66D69009E4936 /* CPFChain-UIKitDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 937005032CB66D58009E4936 /* CPFChain-UIKitDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		93D462E52A29C54600784A62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D462E42A29C54600784A62 /* AppDelegate.swift */; };
 		93D462E72A29C54600784A62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D462E62A29C54600784A62 /* SceneDelegate.swift */; };
 		93D462E92A29C54600784A62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D462E82A29C54600784A62 /* ViewController.swift */; };
@@ -25,7 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				93413A432A29C81000C4E435 /* CPFChain-UIKit-Dynamic in Embed Frameworks */,
+				937005052CB66D69009E4936 /* CPFChain-UIKitDynamic in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93413A422A29C81000C4E435 /* CPFChain-UIKit-Dynamic in Frameworks */,
+				937005042CB66D58009E4936 /* CPFChain-UIKitDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				93413A412A29C81000C4E435 /* CPFChain-UIKit-Dynamic */,
+				937005032CB66D58009E4936 /* CPFChain-UIKitDynamic */,
 			);
 			productName = Demo;
 			productReference = 93D462E12A29C54600784A62 /* Demo.app */;
@@ -161,6 +161,8 @@
 				Base,
 			);
 			mainGroup = 93D462D82A29C54600784A62;
+			packageReferences = (
+			);
 			productRefGroup = 93D462E22A29C54600784A62 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +340,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 628CHGGHXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -345,6 +348,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 628CHGGHXP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -372,6 +377,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,9 +415,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		93413A412A29C81000C4E435 /* CPFChain-UIKit-Dynamic */ = {
+		937005032CB66D58009E4936 /* CPFChain-UIKitDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = "CPFChain-UIKit-Dynamic";
+			productName = "CPFChain-UIKitDynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

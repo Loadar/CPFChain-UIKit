@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@available(*, deprecated, message: "调用较复杂，后续将使用其他方式替换，新的实现将放入CPFUIKit库中")
 public class RichText {
     var textList: [String]
     var attributesList: [[RichText.Attribute]]

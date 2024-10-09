@@ -39,6 +39,7 @@ public extension Cpf where Wrapped: UIScrollView {
         return self
     }
     
+    @available(*, deprecated, message: "请使用contentInsetAdjust来指定behavior，界面布局应考虑安全区域适配")
     @discardableResult
     func disableInsetAdjust(_ toDisable: Bool) -> Cpf {
         return self.contentInsetAdjust(behavior: .never)
